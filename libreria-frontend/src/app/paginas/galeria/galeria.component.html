@@ -1,1 +1,13 @@
-<p>galeria works!</p>
+<app-cabecera></app-cabecera>
+
+<div class="container mt-4">
+  <app-buscador
+    [generos]="generos"
+    (onBuscar)="aplicarBusqueda($event)"
+    (onFiltrar)="aplicarFiltro($event)">
+  </app-buscador>
+
+  <app-lista-productos [libros]="librosFiltrados"></app-lista-productos>
+</div>
+
+<app-pie-pagina></app-pie-pagina>
