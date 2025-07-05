@@ -1,17 +1,23 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-@Component({ selector: 'app-buscador', templateUrl: './buscador.component.html', standalone: false })
+@Component({
+  selector: 'app-buscador',
+  standalone: false,
+  templateUrl: './buscador.component.html'
+})
 export class BuscadorComponent {
-  @Input() generos: any[] = [];
-  @Output() onBuscar  = new EventEmitter<string>();
+  @Input() generos: any[] = []; 
+  @Output() onBuscar = new EventEmitter<string>();
   @Output() onFiltrar = new EventEmitter<number>();
+  
+  termino: string = '';
 
-  termino = '';
+  buscar() {
+    this.onBuscar.emit(this.termino);
+  }
 
-  buscar() { this.onBuscar.emit(this.termino); }
-
-  filtrarPorGenero(e: Event) {
-    const id = Number((e.target as HTMLSelectElement).value);
-    this.onFiltrar.emit(id);
+  filtrarPorGenero(event: any) {
+    const idGenero = Number(event.target.value);
+    this.onFiltrar.emit(idGenero);
   }
 }

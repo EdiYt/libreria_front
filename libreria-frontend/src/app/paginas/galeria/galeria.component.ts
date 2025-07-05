@@ -1,32 +1,57 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../core/servicios/api.service';
 
-@Component({ selector: 'app-galeria', templateUrl: './galeria.component.html', standalone: false })
+@Component({
+  selector: 'app-galeria',
+  standalone: false,
+  templateUrl: './galeria.component.html'
+})
 export class GaleriaComponent implements OnInit {
-  libros: any[] = [];
-  librosFiltrados: any[] = [];
-  generos: any[] = [];
-
-  termino = '';
-  idGenero = 0;
+  libros: any[] = []; 
+  librosFiltrados: any[] = []; 
+  generos: any[] = []; 
+  terminoBusqueda: string = ''; 
 
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
-    this.api.obtenerGeneros().subscribe(g => this.generos = g);
-    this.api.obtenerLibros().subscribe(l => {
-      this.libros = this.librosFiltrados = l;
+    this.cargarLibros();
+    this.cargarGeneros();
+  }
+
+  cargarLibros(): void {
+    this.api.obtenerLibros().subscribe({
+      next: (libros) => {
+        this.libros = libros;
+        this.librosFiltrados = [...libros]; 
+      },
+      error: (err) => console.error('Error cargando libros', err)
     });
   }
 
-  aplicarBusqueda(t: string) { this.termino = t.toLowerCase(); this.filtrar(); }
-  aplicarFiltro(id: number)   { this.idGenero = id;            this.filtrar(); }
+  cargarGeneros(): void {
+    this.api.obtenerGeneros().subscribe({
+      next: (generos) => this.generos = generos,
+      error: (err) => console.error('Error cargando géneros', err)
+    });
+  }
 
-  private filtrar() {
-    this.librosFiltrados = this.libros.filter(l => {
-      const okTitulo  = l.titulo.toLowerCase().includes(this.termino);
-      const okGenero  = this.idGenero ? l.idGenero === this.idGenero : true;
-      return okTitulo && okGenero;
+
+  filtrarLibros(termino: string): void {
+    this.terminoBusqueda = termino.toLowerCase();
+    this.aplicarFiltros();
+  }
+
+
+  filtrarPorGenero(idGenero: number): void {
+    this.aplicarFiltros(idGenero);
+  }
+
+  private aplicarFiltros(idGenero?: number): void {
+    this.librosFiltrados = this.libros.filter(libro => {
+      const coincideTitulo = libro.Titulo.toLowerCase().includes(this.terminoBusqueda);
+      const coincideGenero = idGenero ? libro.IdGenero === idGenero : true;
+      return coincideTitulo && coincideGenero;
     });
   }
 }

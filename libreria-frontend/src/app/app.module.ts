@@ -17,14 +17,14 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent,  
-    GaleriaComponent  
+    InicioComponent,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    SharedModule  
+    SharedModule
   ],
   bootstrap: [AppComponent]
 })

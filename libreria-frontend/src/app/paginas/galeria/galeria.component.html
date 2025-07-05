@@ -1,13 +1,16 @@
-<app-cabecera></app-cabecera>
-
 <div class="container mt-4">
-  <app-buscador
+  <!-- Cambié 'categorias' a 'generos' y los nombres de los eventos -->
+  <app-buscador 
     [generos]="generos"
-    (onBuscar)="aplicarBusqueda($event)"
-    (onFiltrar)="aplicarFiltro($event)">
+    (onBuscar)="filtrarLibros($event)"
+    (onFiltrar)="filtrarPorGenero($event)">
   </app-buscador>
 
-  <app-lista-productos [libros]="librosFiltrados"></app-lista-productos>
+  <!-- Cambié 'productosFiltrados' a 'librosFiltrados' -->
+  <div class="row mt-4">
+    <div class="col-md-4 mb-4" *ngFor="let libro of librosFiltrados">
+      <!-- Asegúrate que el componente tarjeta use 'libro' en lugar de 'producto' -->
+      <app-tarjeta-producto [libro]="libro"></app-tarjeta-producto>
+    </div>
+  </div>
 </div>
-
-<app-pie-pagina></app-pie-pagina>

@@ -4,10 +4,24 @@ import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
-  private api = environment.apiUrl;
+  private apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
-  obtenerLibros()  { return this.http.get<any[]>(`${this.api}/Libro`); }
-  obtenerGeneros() { return this.http.get<any[]>(`${this.api}/Genero`); }
+  // Endpoints exactos de tu backend
+  obtenerLibros() {
+    return this.http.get<any[]>(`${this.apiUrl}/Libro`);
+  }
+
+  obtenerAutores() {
+    return this.http.get<any[]>(`${this.apiUrl}/Autor`);
+  }
+
+  obtenerGeneros() {
+    return this.http.get<any[]>(`${this.apiUrl}/Genero`);
+  }
+
+  crearLibro(libro: any) {
+    return this.http.post(`${this.apiUrl}/Libro`, libro);
+  }
 }

@@ -20,13 +20,12 @@ import { TarjetaProductoComponent } from './tarjeta-producto/tarjeta-producto.co
     CommonModule,
     FormsModule
   ],
-  exports: [  
+  exports: [
     CabeceraComponent,
     PiePaginaComponent,
     BuscadorComponent,
     ListaProductosComponent,
-    TarjetaProductoComponent,
-    FormsModule  
+    TarjetaProductoComponent
   ]
 })
 export class SharedModule {}

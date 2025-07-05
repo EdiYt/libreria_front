@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos globales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estructura principal */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Contenido principal */
+.main-content {
+  flex: 1;
+  padding: 20px 0;
+}
+
+/* Estilos para la cabecera */
+app-cabecera {
+  background-color: #343a40;
+  color: white;
+}
+
+/* Estilos para los enlaces */
+a {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para el pie de página */
+app-pie-pagina {
+  background-color: #343a40;
+  color: white;
+  padding: 20px 0;
+  margin-top: auto;
+}

@@ -1,12 +1,9 @@
-<app-cabecera></app-cabecera>
-
-<div class="container mt-4">
-  <h2 class="mb-3">Bienvenido a la Librería Erick</h2>
+<div class="container my-5">
+  <h2 class="mb-3">Bienvenido a la Librería</h2>
   <div class="row">
-    <div class="col-md-3 mb-4" *ngFor="let libro of destacados">
+    <div class="col-md-4 mb-4" *ngFor="let libro of librosDestacados">
+
       <app-tarjeta-producto [libro]="libro"></app-tarjeta-producto>
     </div>
   </div>
 </div>
-
-<app-pie-pagina></app-pie-pagina>
