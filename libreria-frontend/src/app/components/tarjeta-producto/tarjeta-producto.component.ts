@@ -1,11 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tarjeta-producto',
-  imports: [],
   templateUrl: './tarjeta-producto.component.html',
-  styleUrl: './tarjeta-producto.component.css'
 })
-export class TarjetaProductoComponent {
 
-}
+export class TarjetaProductoComponent { @Input() libro: any; }
