@@ -8,7 +8,6 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  // Endpoints exactos de tu backend
   obtenerLibros() {
     return this.http.get<any[]>(`${this.apiUrl}/Libro`);
   }

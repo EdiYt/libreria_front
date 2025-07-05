@@ -6,5 +6,9 @@ import { Component, Input } from '@angular/core';
   templateUrl: './tarjeta-producto.component.html'
 })
 export class TarjetaProductoComponent {
-  @Input() libro: any; 
+  @Input() libro: any;
+
+  handleImageError(event: any) {
+    event.target.src = 'assets/imagenes/libro-default.jpg';
+  }
 }
