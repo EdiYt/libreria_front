@@ -1,22 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared.module';
-import { PaginasModule } from './paginas/paginas.module'; 
-import { AppRoutingModule } from './app-routing.module';
+import { InicioComponent } from './paginas/inicio/inicio.component';
+import { GaleriaComponent } from './paginas/galeria/galeria.component';
+
+const routes: Routes = [
+  { path: '', component: InicioComponent, pathMatch: 'full' },
+  { path: 'galeria', component: GaleriaComponent },
+  { path: '**', redirectTo: '' }
+];
 
 @NgModule({
   declarations: [
-    AppComponent 
+    AppComponent,
+    InicioComponent,  
+    GaleriaComponent  
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    SharedModule,
-    PaginasModule, 
-    AppRoutingModule
+    RouterModule.forRoot(routes),
+    SharedModule  
   ],
   bootstrap: [AppComponent]
 })
