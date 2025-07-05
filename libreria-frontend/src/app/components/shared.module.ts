@@ -16,14 +16,17 @@ import { TarjetaProductoComponent } from './tarjeta-producto/tarjeta-producto.co
     ListaProductosComponent,
     TarjetaProductoComponent
   ],
+  imports: [
+    CommonModule,
+    FormsModule              
+  ],
   exports: [
     CabeceraComponent,
     PiePaginaComponent,
     BuscadorComponent,
     ListaProductosComponent,
     TarjetaProductoComponent,
-    FormsModule
+    FormsModule               
   ]
 })
 export class SharedModule {}
-
