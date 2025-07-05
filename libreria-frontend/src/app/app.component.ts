@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
-})
-export class AppComponent {
-  title = 'libreria-frontend';
-}
+@Component({ 
+  selector: 'app-root', 
+  template: '<router-outlet></router-outlet>',
+standalone : false })
+export class AppComponent {}

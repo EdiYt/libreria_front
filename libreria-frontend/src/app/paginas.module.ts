@@ -6,8 +6,14 @@ import { InicioComponent } from './paginas/inicio/inicio.component';
 import { GaleriaComponent } from './paginas/galeria/galeria.component';
 
 @NgModule({
-  declarations: [InicioComponent, GaleriaComponent],
-  imports: [CommonModule, SharedModule],
-  exports: [InicioComponent, GaleriaComponent]
+  declarations: [
+    InicioComponent,
+    GaleriaComponent
+  ],
+  imports: [
+    CommonModule,
+    SharedModule
+  ]
+
 })
 export class PaginasModule {}
