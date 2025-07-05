@@ -8,7 +8,6 @@ describe('BuscadorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BuscadorComponent]
     })
     .compileComponents();
 

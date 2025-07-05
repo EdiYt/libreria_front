@@ -8,7 +8,6 @@ describe('GaleriaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GaleriaComponent]
     })
     .compileComponents();
 

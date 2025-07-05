@@ -8,7 +8,6 @@ describe('PiePaginaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PiePaginaComponent]
     })
     .compileComponents();
 

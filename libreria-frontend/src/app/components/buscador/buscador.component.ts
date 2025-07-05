@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-@Component({ selector: 'app-buscador', templateUrl: './buscador.component.html' })
+@Component({ selector: 'app-buscador', templateUrl: './buscador.component.html', standalone: false })
 export class BuscadorComponent {
   @Input() generos: any[] = [];
   @Output() onBuscar  = new EventEmitter<string>();

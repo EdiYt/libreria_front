@@ -8,7 +8,6 @@ describe('CabeceraComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CabeceraComponent]
     })
     .compileComponents();
 

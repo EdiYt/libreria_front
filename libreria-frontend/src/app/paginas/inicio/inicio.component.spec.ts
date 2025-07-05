@@ -8,7 +8,6 @@ describe('InicioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InicioComponent]
     })
     .compileComponents();
 

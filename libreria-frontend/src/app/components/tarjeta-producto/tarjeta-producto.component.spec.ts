@@ -8,7 +8,6 @@ describe('TarjetaProductoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TarjetaProductoComponent]
     })
     .compileComponents();
 
