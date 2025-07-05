@@ -1,1 +1,17 @@
-<p>buscador works!</p>
+<div class="search-container mb-4">
+  <div class="row g-2">
+    <div class="col-md-8">
+      <input type="text"
+             class="form-control"
+             placeholder="Buscar libros..."
+             [(ngModel)]="termino"
+             (input)="buscar()">
+    </div>
+    <div class="col-md-4">
+      <select class="form-select" (change)="filtrarPorGenero($event)">
+        <option value="">Todos los géneros</option>
+        <option *ngFor="let g of generos" [value]="g.idGenero">{{ g.nombre }}</option>
+      </select>
+    </div>
+  </div>
+</div>
