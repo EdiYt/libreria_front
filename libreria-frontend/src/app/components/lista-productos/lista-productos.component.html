@@ -1,1 +1,5 @@
-<p>lista-productos works!</p>
+<div class="row">
+  <div class="col-md-4 mb-4" *ngFor="let libro of libros">
+    <app-tarjeta-producto [libro]="libro"></app-tarjeta-producto>
+  </div>
+</div>

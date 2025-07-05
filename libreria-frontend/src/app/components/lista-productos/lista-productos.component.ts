@@ -1,11 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-lista-productos',
-  imports: [],
   templateUrl: './lista-productos.component.html',
-  styleUrl: './lista-productos.component.css'
 })
-export class ListaProductosComponent {
 
-}
+export class ListaProductosComponent { @Input() libros: any[] = []; }
