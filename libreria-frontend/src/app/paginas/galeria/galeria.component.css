@@ -1,0 +1,13 @@
+.lista-libros-horizontal {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+
+.libro-item {
+  flex: 0 0 auto;
+  width: 200px; 
+}
