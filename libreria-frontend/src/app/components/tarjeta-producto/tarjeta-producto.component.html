@@ -1,10 +1,9 @@
 <div class="card h-100">
-  <div class="ratio ratio-4x3"> 
   <img [src]="'https://localhost:7071' + libro.ImagenUrl" 
-       class="card-img-top"
+       class="imagen-libro"
        [alt]="libro.Titulo"
        (error)="handleImageError($event)">
-    </div>
+       
   <div class="card-body">
     <h5 class="card-title">{{ libro.Titulo }}</h5>
     <p class="card-text text-success fw-bold">

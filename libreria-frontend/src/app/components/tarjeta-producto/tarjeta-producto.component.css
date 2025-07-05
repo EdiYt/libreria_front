@@ -1,11 +1,8 @@
-.card-img-top {
-  max-height: 200px;  
-  width: auto;        
-  object-fit: cover;  
-  object-position: center; 
-}
-
-.card-img-top:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
+.imagen-libro {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
 }
